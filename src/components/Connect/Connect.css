@@ -1,0 +1,62 @@
+.connect{
+    clip-path:polygon(50% 25%,100% 0%,100% 100%,50% 80%,0 100%,0% 0%);
+    background-color:#2d3436;
+    width:100%;
+    height:100%;
+    padding-top:300px;
+    padding-bottom:250px;
+}
+.connect>h1{
+    text-align:center;
+    color:white;
+    opacity:0;
+    margin-bottom:30px;
+}
+.connect form{
+    margin: auto;
+    width:40%;
+}
+.connect form input,textarea{
+    display:block;
+    width:80%;
+    margin:auto;
+    margin-top:20px;
+    padding:10px;
+    background-color:#151c1f;
+    border:none;
+    border-radius:5px;
+    color:white;
+}
+.connect .submit{
+    display:flex;
+    justify-content: flex-end;
+}
+.connect form{
+    opacity:0;
+}
+.connect form .submit input{
+    width:40%;
+    margin:0;
+    margin-right:10%;
+    margin-top:20px;
+    border:2px solid transparent;
+    transition: .3s all ease;
+}
+.connect form .submit input:hover{
+    border:2px solid #151c1f;
+    background-color:#2d3436;
+}
+.error{
+    text-align:center;
+    color:red;
+    font-style: italic;
+}
+@media screen and (max-width:750px) { 
+    .connect{     
+        clip-path:polygon(50% 10%,100% 0%,100% 100%,50% 85%,0 100%,0% 0%);
+        padding-top:100px;
+    }  
+    .connect form{
+        width:80%;
+    }
+}

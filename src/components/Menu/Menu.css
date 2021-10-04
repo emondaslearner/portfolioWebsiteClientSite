@@ -1,0 +1,162 @@
+.menu{
+    width:90%;
+    overflow: hidden;
+    margin:auto;
+    padding:50px 0;
+}
+.menu .onFixed{
+    display:none;
+}
+.main-menu{
+    width:100%;
+    background-color:white;
+    position:fixed;
+    top:0;
+    z-index:9999;
+    border-radius:1px solid #ddd;
+    animation-name:fixedAnimation;
+    animation-duration:.5s;
+    border-bottom:1px solid #ddd;
+}
+.main-menu .menu{
+    padding:20px 0;
+}
+.main-menu .nav a{
+    color:gray;
+}
+.main-menu .menu .nav{
+    margin-top:7px;
+}
+.anchor{
+    width:100%;
+    display:flex;
+    justify-content: flex-end;
+}
+.nav a{
+    margin:0 15px;
+    color:white;
+    text-decoration: none;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s color;
+}
+.nav a::after{
+    content:'';
+    width:0;
+    height:2px;
+    display: block;
+    background:#d63031;
+    transition: width .3s;
+}
+.nav a:hover{
+    color:#d63031;
+}
+.active{
+    color:#d63031 !important;
+}
+.active::after{
+    width:100% !important;
+}
+.topScroll{
+    width:50px;
+    height:50px;
+    position: fixed;
+    right:-50px;
+    bottom:100px;
+    z-index:99999;
+    border-radius:10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color:#262F38;
+    color: white;
+    opacity:0;
+}
+.topScroll .arrow{
+    font-size:22px;
+}
+.addAnimation{
+    animation-name:slideScrollToTop;
+    animation-fill-mode: forwards;
+    animation-duration:1s;
+}
+.bar{
+    display:none;
+}
+.close{
+    display:none;
+}
+.animateMenu{
+    animation-fill-mode: forwards;
+    animation-name:animateMenu;
+    animation-duration:1s;
+}
+@keyframes slideScrollToTop {
+    100%{
+        right:10px;
+    }
+}
+@keyframes fixedAnimation {
+    0%{
+        top:-100px;
+    }
+    100%{
+        top:0px;
+    }
+}
+@keyframes animateMenu {
+    100%{
+        height:50%;
+    }
+}
+@media screen and (max-width:765px) {
+    .close{
+        display:block;
+        position:absolute;
+        right:20px;
+        top:20px;
+    }
+    .closer{
+        font-size:23px;
+        cursor: pointer;
+    }
+    .closer:hover{
+        color:#d63031;
+    }
+    .bar{
+        display:block;
+        position:absolute;
+        right:50px;
+        top:40px
+    }
+    .bar .bars{
+        font-size:30px;
+        color:white;
+        cursor: pointer;
+    }
+    .bar .bars:hover{
+        color:#d63031;
+    }
+    .nav{
+        display:none;
+        height:0;
+        width:100%;
+        background-color:white;
+        z-index:9999;
+        position:absolute;
+        left:0;
+        top:0;
+        overflow: hidden;
+    }
+    .nav .anchor{
+        display:block;
+    }
+    .nav a{
+        display:block;
+        color:black;
+        margin:15px;
+        margin-left:50px;
+        width:10%;
+    }
+}
